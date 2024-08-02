@@ -1,0 +1,144 @@
+.center-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: span 1.5s ease;
+    border-radius: 50%;
+}
+
+.center-image:hover {
+    cursor: pointer;
+}
+
+.center-image img {
+    width: 200%;
+    box-shadow: 100px 30px 20px rgba(0, 0, 0, 0.15);
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    animation: orbit 7s infinite linear;
+}
+
+.orbit-image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    animation: rotate 7s infinite linear;
+}
+
+.orbit-image:nth-child(1) {
+    top: 0%;
+    left: 25%;
+    width: 40px;
+    height: 40px;
+}
+
+.orbit-image:nth-child(2) {
+    top: 50%;
+    right: 75%;
+    width: 40px;
+    height: 40px;
+}
+
+.orbit-image:nth-child(3) {
+    bottom: 75%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.orbit-image:nth-child(4) {
+    top: 25%;
+    left: 75%;
+    width: 30px;
+    height: 30px;
+}
+
+.orbit-image:nth-child(5) {
+    top: 100%;
+    left: 75%;
+    width: 40px;
+    height: 40px;
+}
+
+.orbit-image:nth-child(6) {
+    top: 80%;
+    left: 75%;
+    width: 40px;
+    height: 40px;
+}
+
+.orbit-image:nth-child(7) {
+    top: 75%;
+    left: 25%;
+    width: 40px;
+    height: 40px;
+}
+
+.panningImgSpace
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transition: all 0.2s linear;
+}
+
+@keyframes orbit
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes span
+{
+    0%
+    {
+        left: 100%;
+    }
+
+    100%
+    {
+        left: 0px;
+    }
+}
+
+.hidden
+{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+.show
+{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
